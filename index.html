@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Nika ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="particles" id="particles"></div>
+
+  <main class="app">
+
+    <!-- ПЕРВАЯ СТРАНИЦА: ПРИВЕТСТВИЕ -->
+<section class="screen active welcome-screen" id="welcome">
+
+  <!-- Световые пятна -->
+  <div class="welcome-glow glow-one"></div>
+  <div class="welcome-glow glow-two"></div>
+
+  <!-- Декоративные звёзды -->
+  <div class="welcome-stars" id="welcomeStars"></div>
+
+  <!-- Последовательное приветствие -->
+  <div class="intro-stage" id="introStage">
+    <div class="intro-label">A LITTLE WORLD FOR YOU</div>
+    <h1 class="intro-word" id="introText">HELLO</h1>
+    <div class="intro-line"></div>
+    <p class="intro-subtitle">Something special is waiting...</p>
+  </div>
+
+  <!-- Основной экран -->
+  <div class="access hidden" id="access">
+
+    <div class="welcome-top-label">
+      <span class="tiny-heart">♥</span>
+      A LITTLE SURPRISE FOR YOU
+      <span class="tiny-heart">♥</span>
+    </div>
+
+    <h1 class="nika-title">
+      <span class="nika-letter">N</span><span class="nika-letter">i</span><span class="nika-letter">k</span><span class="nika-letter">a</span>
+      <span class="nika-sparkle">✦</span>
+    </h1>
+
+    <p class="welcome-description">
+      У каждого красивого воспоминания<br>
+      есть своя особенная дата...
+    </p>
+
+    <div class="heart-area">
+
+      <!-- Орбиты вокруг сердца -->
+      <div class="heart-orbit orbit-one"></div>
+      <div class="heart-orbit orbit-two"></div>
+
+      <span class="orbit-star star-one">✦</span>
+      <span class="orbit-star star-two">✧</span>
+      <span class="orbit-star star-three">✦</span>
+      <span class="orbit-heart">♡</span>
+
+      <!-- Интерактивное сердце -->
+      <button class="heart-button" id="heartButton"
+              type="button" aria-label="Ввести особенную дату">
+        <span class="heart-shape">♥</span>
+        <span class="heart-inner-glow"></span>
+        <span class="heart-date">
+          <span class="heart-lock">✧</span>
+          <span class="heart-date-hint">НАША ДАТА</span>
+          <input
+            id="dateInput"
+            type="text"
+            inputmode="numeric"
+            maxlength="10"
+            placeholder="ДД.ММ.ГГГГ"
+            autocomplete="off"
+            aria-label="Наша особенная дата"
+          >
+        </span>
+      </button>
+
+      <div class="heart-shadow"></div>
+    </div>
+
+    <div class="date-hint">
+      <span class="hint-dot"></span>
+      Маленький ключ к нашим воспоминаниям
+      <span class="hint-dot"></span>
+    </div>
+
+    <button class="primary welcome-button" id="openHeartButton"
+            type="button">
+      <span>Открыть моё сердце</span>
+      <span class="button-arrow">↗</span>
+    </button>
+
+    <p class="error welcome-error" id="dateError"></p>
+
+    <div class="welcome-bottom">
+      MADE WITH <span>♥</span> JUST FOR YOU
+    </div>
+  </div>
+
+  <!-- Частицы для эффекта разбивающегося сердца -->
+  <div class="heart-particles" id="heartParticles"></div>
+
+</section>
+
+    <!-- 2. Пароль -->
+    <section class="screen" id="password">
+      <div class="photo-frame">
+        <!-- ЗАМЕНИ НА ВАШУ ФОТОГРАФИЮ -->
+        <img src="img/us.jpg" alt="Мы с Никой">
+      </div>
+
+      <p class="eyebrow">LEVEL 02 · ONLY YOU</p>
+      <h2>А это уже посложнее...</h2>
+      <p>Какой пароль стоит у меня на телефоне?</p>
+
+      <form id="passwordForm">
+        <input id="passwordInput" type="password"
+               placeholder="Введи пароль" inputmode="numeric">
+        <button class="primary">Проверить ❤️</button>
+        <p class="error" id="passwordError"></p>
+      </form>
+    </section>
+
+    <!-- 3. Выбор места -->
+    <section class="screen" id="place">
+      <p class="eyebrow">LEVEL 03 · OUR DATE</p>
+      <h2 class="reveal-text">Ну теперь я точно уверен,
+        что это ты))</h2>
+      <p>Куда бы ты хотела сходить до или после кино?</p>
+
+      <div class="options">
+        <button class="option" data-place="Вафельная">🧇 Вафельная</button>
+        <button class="option" data-place="Simple Coffee">☕ Simple Coffee</button>
+        <button class="option" data-place="Прогулка в парке">🌙 Прогулка в парке</button>
+        <button class="option" data-place="Ресторан">🍽️ Ресторан</button>
+      </div>
+    </section>
+
+    <!-- 4. Время -->
+    <section class="screen" id="time">
+      <p class="eyebrow">LEVEL 04 · TIME TOGETHER</p>
+      <h2>До скольки будем в городе?</h2>
+      <p>Хочу, чтобы наш день был особенным ❤️</p>
+
+      <div class="options">
+        <button class="option" data-time="19:30">19:30</button>
+        <button class="option" data-time="20:00">20:00</button>
+        <button class="option" data-time="20:30">20:30</button>
+        <button class="option" data-time="21:00">21:00</button>
+      </div>
+    </section>
+
+    <!-- 5. Загрузка билета -->
+    <section class="screen" id="loading">
+      <div class="loader-heart">♥</div>
+      <h2>Готовим кое-что особенное...</h2>
+      <p id="loadingText">Собираем воспоминания</p>
+      <div class="progress">
+        <div id="progressBar"></div>
+      </div>
+
+      <div class="photo-flight">
+        <!-- Дополнительные фотографии для анимации -->
+        <img src="img/photo1.jpg" alt="Наш момент">
+        <img src="img/photo2.jpg" alt="Наш момент">
+        <img src="img/photo3.jpg" alt="Наш момент">
+      </div>
+    </section>
+
+    <!-- 6. Готовый билет -->
+    <section class="screen" id="ticketScreen">
+      <p class="eyebrow">ADMIT ONE · FOR MY NIKA</p>
+      <h2>Наше маленькое приключение ❤️</h2>
+
+      <article class="ticket">
+        <div class="ticket-photo">
+          <!-- ФОТО СЛЕВА НА БИЛЕТЕ -->
+          <img src="img/us.jpg" alt="Мы вместе">
+        </div>
+
+        <div class="ticket-details">
+          <span class="ticket-label">SPECIAL DATE</span>
+          <h2>For Nika ♡</h2>
+
+          <div class="ticket-info">
+            <span>📅 Дата</span>
+            <strong id="ticketDate">Уточним дату</strong>
+          </div>
+
+          <div class="ticket-info">
+            <span>📍 Наше место</span>
+            <strong id="ticketPlace">—</strong>
+          </div>
+
+          <div class="ticket-info">
+            <span>🕘 До</span>
+            <strong id="ticketTime">—</strong>
+          </div>
+
+          <div class="ticket-info">
+            <span>🎬 Наш план</span>
+            <strong id="ticketPlan">Кино + наше приключение</strong>
+          </div>
+
+          <p class="ticket-footer">ONE DAY · A THOUSAND MEMORIES</p>
+        </div>
+      </article>
+
+      <p class="final-note">
+        Самое главное в этом билете — с кем ты проведёшь этот день.
+        Люблю тебя ❤️
+      </p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
