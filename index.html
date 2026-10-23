@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Nika ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="particles" id="particles"></div>
+
+  <main class="app">
+
+    <!-- ПЕРВАЯ СТРАНИЦА: ПРИВЕТСТВИЕ -->
+<section class="screen active welcome-screen" id="welcome">
+
+  <!-- Световые пятна -->
+  <div class="welcome-glow glow-one"></div>
+  <div class="welcome-glow glow-two"></div>
+
+  <!-- Декоративные звёзды -->
+  <div class="welcome-stars" id="welcomeStars"></div>
+
+  <!-- Последовательное приветствие -->
+  <div class="intro-stage" id="introStage">
+    <div class="intro-label">A LITTLE WORLD FOR YOU</div>
+    <h1 class="intro-word" id="introText">HELLO</h1>
+    <div class="intro-line"></div>
+    <p class="intro-subtitle">Something special is waiting...</p>
+  </div>
+
+  <!-- Основной экран -->
+  <div class="access hidden" id="access">
+
+    <div class="welcome-top-label">
+      <span class="tiny-heart">♥</span>
+      A LITTLE SURPRISE FOR YOU
+      <span class="tiny-heart">♥</span>
+    </div>
+
+    <h1 class="nika-title">
+      <span class="nika-letter">N</span><span class="nika-letter">i</span><span class="nika-letter">k</span><span class="nika-letter">a</span>
+      <span class="nika-sparkle">✦</span>
+    </h1>
+
+    <p class="welcome-description">
+      У каждого красивого воспоминания<br>
+      есть своя особенная дата...
+    </p>
+
+    <div class="heart-area">
+
+      <!-- Орбиты вокруг сердца -->
+      <div class="heart-orbit orbit-one"></div>
+      <div class="heart-orbit orbit-two"></div>
+
+      <span class="orbit-star star-one">✦</span>
+      <span class="orbit-star star-two">✧</span>
+      <span class="orbit-star star-three">✦</span>
+      <span class="orbit-heart">♡</span>
+
+      <!-- Интерактивное сердце -->
+      <button class="heart-button" id="heartButton"
+              type="button" aria-label="Ввести особенную дату">
+        <span class="heart-shape">♥</span>
+        <span class="heart-inner-glow"></span>
+        <span class="heart-date">
+          <span class="heart-lock">✧</span>
+          <span class="heart-date-hint">НАША ДАТА</span>
+          <input
+            id="dateInput"
+            type="text"
+            inputmode="numeric"
+            maxlength="10"
+            placeholder="ДД.ММ.ГГГГ"
+            autocomplete="off"
+            aria-label="Наша особенная дата"
+          >
+        </span>
+      </button>
+
+      <div class="heart-shadow"></div>
+    </div>
+
+    <div class="date-hint">
+      <span class="hint-dot"></span>
+      Маленький ключ к нашим воспоминаниям
+      <span class="hint-dot"></span>
+    </div>
+
+    <button class="primary welcome-button" id="openHeartButton"
+            type="button">
+      <span>Открыть моё сердце</span>
+      <span class="button-arrow">↗</span>
+    </button>
+
+    <p class="error welcome-error" id="dateError"></p>
+
+    <div class="welcome-bottom">
+      MADE WITH <span>♥</span> JUST FOR YOU
+    </div>
+  </div>
+
+  <!-- Частицы для эффекта разбивающегося сердца -->
+  <div class="heart-particles" id="heartParticles"></div>
+
+</section>
+
+   <!-- ЭКРАН 2 — СЕКРЕТНЫЙ ПАРОЛЬ -->
+<section class="screen password-screen" id="password">
+
+  <div class="password-glow password-glow-one"></div>
+  <div class="password-glow password-glow-two"></div>
+  <div class="password-particles" id="passwordParticles"></div>
+
+  <div class="password-content">
+
+    <div class="password-topline">
+      <span class="topline-heart">♥</span>
+      PRIVATE ACCESS
+      <span class="topline-heart">♥</span>
+    </div>
+
+    <div class="memory-photo-wrap">
+      <div class="photo-halo"></div>
+      <div class="photo-ring photo-ring-one"></div>
+      <div class="photo-ring photo-ring-two"></div>
+
+      <div class="memory-photo">
+        <!-- ЗАМЕНИ img/us.jpg НА ВАШУ ФОТОГРАФИЮ -->
+        <img src="img/foto1.jpeg" alt="Наше воспоминание">
+
+        <div class="photo-overlay">
+          <span>♡</span>
+          OUR LITTLE WORLD
+        </div>
+      </div>
+
+      <span class="photo-decoration photo-decoration-one">✦</span>
+      <span class="photo-decoration photo-decoration-two">♡</span>
+      <span class="photo-decoration photo-decoration-three">✧</span>
+    </div>
+
+    <div class="password-heading">
+      <div class="level-pill">
+        <span class="level-dot"></span>
+        LEVEL 02
+        <span class="level-divider">/</span>
+        JUST FOR YOU
+      </div>
+
+      <h2 class="password-title">
+        А это уже<br>
+        <span>посложнее...</span>
+      </h2>
+
+      <p class="password-question">
+        Какой пароль стоит<br>
+        у меня на телефоне?
+      </p>
+
+      <p class="password-caption">
+        Думаю, ты точно должна его знать :)
+      </p>
+    </div>
+
+    <form id="passwordForm" class="password-form">
+
+      <label class="password-label" for="passwordInput">
+        ВВЕДИ 6 ЦИФР
+      </label>
+
+      <div class="password-input-wrap">
+        <span class="input-lock">♙</span>
+
+        <input
+          id="passwordInput"
+          class="password-input"
+          type="password"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          maxlength="6"
+          autocomplete="off"
+          placeholder="••••••"
+          aria-label="Пароль телефона"
+        >
+
+        <button
+          type="button"
+          class="show-password"
+          id="showPassword"
+          aria-label="Показать или скрыть пароль"
+        >◉</button>
+      </div>
+
+      <div class="password-dots" id="passwordDots"
+           aria-hidden="true">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+
+      <button class="primary password-submit" type="submit">
+        <span>Проверить пароль</span>
+        <span class="submit-heart">♥</span>
+      </button>
+
+      <p class="error password-error" id="passwordError"></p>
+
+    </form>
+
+    <div class="password-bottom">
+      <span class="bottom-line"></span>
+      <span>ONE HEART · ONE SECRET</span>
+      <span class="bottom-line"></span>
+    </div>
+
+  </div>
+</section>
+
+    <!-- ЭКРАН 3 — ВЫБОР МЕСТА -->
+<section class="screen place-screen" id="place">
+
+  <div class="place-glow place-glow-one"></div>
+  <div class="place-glow place-glow-two"></div>
+  <div class="place-stars" id="placeStars"></div>
+
+  <div class="place-content">
+
+    <div class="place-topline">
+      <span>♥</span> OUR LITTLE DATE <span>♥</span>
+    </div>
+
+    <div class="place-step">A LITTLE PLAN · 03</div>
+
+    <h2 class="place-title">
+      Ну теперь я точно<br>
+      <span>уверен, что это ты))</span>
+    </h2>
+
+    <p class="place-description">
+      А теперь самое интересное...
+      <br>Куда отправимся после или до кино?
+    </p>
+
+    <div class="place-divider">
+      <span></span>
+      <span class="divider-heart">♡</span>
+      <span></span>
+    </div>
+
+    <div class="place-section-heading">
+      <div>
+        <span class="place-eyebrow">CHOOSE YOUR PLACE</span>
+        <h3>Наше маленькое приключение</h3>
+      </div>
+
+      <span class="place-counter" id="placeCounter">0 / 1</span>
+    </div>
+
+    <div class="place-grid">
+
+      <button class="place-card" type="button"
+              data-place="Вафельная">
+        <div class="place-card-image waffle-image">
+          <span class="place-emoji">🧇</span>
+          <span class="place-image-tag">SWEET MOMENT</span>
+          <span class="place-check">✓</span>
+        </div>
+        <div class="place-card-info">
+          <div>
+            <h4>Вафельная</h4>
+            <p>Что-нибудь вкусненькое ♡</p>
+          </div>
+          <span class="place-card-arrow">↗</span>
+        </div>
+      </button>
+
+      <button class="place-card" type="button"
+              data-place="Simple Coffee">
+        <div class="place-card-image coffee-image">
+          <span class="place-emoji">☕</span>
+          <span class="place-image-tag">COZY TIME</span>
+          <span class="place-check">✓</span>
+        </div>
+        <div class="place-card-info">
+          <div>
+            <h4>Simple Coffee</h4>
+            <p>Кофе и разговоры</p>
+          </div>
+          <span class="place-card-arrow">↗</span>
+        </div>
+      </button>
+
+      <button class="place-card" type="button"
+              data-place="Прогулка в парке">
+        <div class="place-card-image park-image">
+          <span class="place-emoji">🌙</span>
+          <span class="place-image-tag">JUST US TWO</span>
+          <span class="place-check">✓</span>
+        </div>
+        <div class="place-card-info">
+          <div>
+            <h4>Прогулка в парке</h4>
+            <p>Ты, я и целый вечер</p>
+          </div>
+          <span class="place-card-arrow">↗</span>
+        </div>
+      </button>
+
+      <button class="place-card" type="button"
+              data-place="Ресторан">
+        <div class="place-card-image restaurant-image">
+          <span class="place-emoji">🍓</span>
+          <span class="place-image-tag">SPECIAL EVENING</span>
+          <span class="place-check">✓</span>
+        </div>
+        <div class="place-card-info">
+          <div>
+            <h4>Ресторан</h4>
+            <p>Красивый вечер вдвоём</p>
+          </div>
+          <span class="place-card-arrow">↗</span>
+        </div>
+      </button>
+
+    </div>
+
+    <p class="place-hint" id="placeHint">
+      ✦ Выбери то, чего тебе хочется
+    </p>
+
+    <button class="primary place-continue" id="continuePlace"
+            type="button" disabled>
+      <span>Продолжить наше свидание</span>
+      <span>♡</span>
+    </button>
+
+    <div class="place-footer">
+      MADE WITH LOVE · JUST FOR NIKA
+    </div>
+
+  </div>
+</section>
+
+    <!-- 4. Время -->
+    <section class="screen" id="time">
+      <p class="eyebrow">LEVEL 04 · TIME TOGETHER</p>
+      <h2>До скольки будем в городе?</h2>
+      <p>Хочу, чтобы наш день был особенным ❤️</p>
+
+      <div class="options">
+        <button class="option" data-time="19:30">19:30</button>
+        <button class="option" data-time="20:00">20:00</button>
+        <button class="option" data-time="20:30">20:30</button>
+        <button class="option" data-time="21:00">21:00</button>
+      </div>
+    </section>
+
+    <!-- Загрузка билета -->
+<section class="screen" id="loading">
+  <div class="loading-orb"></div>
+  <div class="loading-particles" id="loadingParticles"></div>
+
+  <div class="loading-content">
+    <div class="loading-label">A LITTLE SURPRISE FOR YOU</div>
+
+    <div class="loader-heart">♥</div>
+
+    <h2>Готовим кое-что особенное</h2>
+    <p id="loadingText">Собираем наши воспоминания...</p>
+
+    <div class="loading-gallery">
+      <div class="gallery-photo photo-left">
+        <img src="img/foto2.jpeg" alt="Наш момент">
+      </div>
+
+      <div class="gallery-photo photo-center">
+        <img src="img/foto3.jpeg" alt="Наш момент">
+        <span>♡</span>
+      </div>
+
+      <div class="gallery-photo photo-right">
+        <img src="img/foto4.jpeg" alt="Наш момент">
+      </div>
+    </div>
+
+    <div class="loading-progress-info">
+      <span>Создаём наше свидание</span>
+      <span id="progressPercent">0%</span>
+    </div>
+
+    <div class="progress">
+      <div id="progressBar"></div>
+    </div>
+
+    <p class="loading-bottom">Каждая деталь — с любовью ♡</p>
+  </div>
+</section>
+
+    <!-- 6. Готовый билет -->
+<section class="screen" id="ticketScreen">
+  <p class="eyebrow">A LITTLE SURPRISE FOR YOU ♡</p>
+  <h2 class="ticket-heading">Наше маленькое приключение</h2>
+  <p class="ticket-subtitle">Один особенный день. Только для нас двоих.</p>
+
+  <!-- Этот блок сохраняется как изображение -->
+  <div class="ticket-export" id="ticketCard">
+    <article class="ticket">
+      <div class="ticket-top">
+        <span>♡ A DATE TO REMEMBER</span>
+        <span class="ticket-number">№ 020124</span>
+      </div>
+
+      <div class="ticket-main">
+        <div class="ticket-photo">
+          <img src="img/foto5.jpeg" alt="Мы вместе">
+          <div class="photo-caption">my favorite person ♡</div>
+        </div>
+
+        <div class="ticket-details">
+          <span class="ticket-label">SPECIAL INVITATION</span>
+          <h2>For Nika <span>♡</span></h2>
+          <p class="ticket-description">
+            Приглашение на наше особенное свидание
+          </p>
+
+          <div class="ticket-info">
+            <span>✦ ДАТА</span>
+            <strong id="ticketDate">Уточним дату</strong>
+          </div>
+
+          <div class="ticket-info">
+            <span>✦ НАШЕ МЕСТО</span>
+            <strong id="ticketPlace">—</strong>
+          </div>
+
+          <div class="ticket-info">
+            <span>✦ ВРЕМЯ</span>
+            <strong id="ticketTime">—</strong>
+          </div>
+
+          <div class="ticket-info">
+            <span>✦ НАШ ПЛАН</span>
+            <strong id="ticketPlan">Кино + наше приключение</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticket-perforation">
+        <span></span>
+        <div>━━━━━━━━━━━━━━━━━━━━━━━━</div>
+        <span></span>
+      </div>
+
+      <div class="ticket-bottom">
+        <div>
+          <strong>YOU + ME</strong>
+          <span>ONE DAY · A THOUSAND MEMORIES</span>
+        </div>
+        <div class="ticket-heart">♥</div>
+      </div>
+
+      <p class="ticket-love-note">
+        Самое главное — с кем ты проведёшь этот день. Люблю тебя ♡
+      </p>
+    </article>
+  </div>
+
+  <button id="saveTicketBtn" class="save-ticket-btn">
+    <span>♡</span> Сохранить билет
+  </button>
+
+  <p class="save-ticket-hint">
+    Забери это воспоминание с собой ✨
+  </p>
+</section>
+
+  </main>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</body>
+</html>
